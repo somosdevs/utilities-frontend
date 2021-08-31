@@ -13,6 +13,8 @@ const firebaseConfig = {
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig);
 
+// const db = firebase.firestore();
+
 const mapUserFromAuth = (user) => {
   const { email, photoURL, displayName, uid } = user;
 
@@ -35,3 +37,7 @@ export const logInGithub = () => {
   const githubProvider = new firebase.auth.GithubAuthProvider();
   return firebase.auth().signInWithPopup(githubProvider);
 };
+
+// export const fetchUser = () => {
+//   return db.collection("")
+// }
