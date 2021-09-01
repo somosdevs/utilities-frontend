@@ -1,5 +1,11 @@
 :root {
-  --primary: #09f;
+  --primary: #14213d;
+  --secondary: #fca311;
+  --light: #e5e5e5;
+  --black: #000000;
+  --white: #ffffff;
+  --blue: #09f;
+  --primary-light: #395fb145;
   --header-height: 60px;
   --footer-height: 60px;
 }

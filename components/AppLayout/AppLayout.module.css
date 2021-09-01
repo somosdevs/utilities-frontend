@@ -2,22 +2,13 @@
   display: flex;
 }
 
-.nav {
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 20%;
-  background-color: #000;
-}
-
 .container {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: salmon;
+  background-color: #fff;
 }
 
 .header {
@@ -25,7 +16,8 @@
   top: 0;
   height: var(--header-height);
   width: 100%;
-  background-color: red;
+  background-color: var(--secondary);
+  box-shadow: inset 0 -1px 0 #ffffff55;
 }
 
 .main {
@@ -35,5 +27,5 @@
 .footer {
   height: var(--footer-height);
   width: 100%;
-  background-color: #fa0e;
+  background-color: #fff;
 }

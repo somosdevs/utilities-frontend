@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>UtilitiesX - Home</title>
+        <title>UtilitiesX - Team</title>
       </Head>
-      <AppLayout pageName="Home"></AppLayout>
+      <AppLayout pageName="Team"></AppLayout>
     </>
   );
 }
