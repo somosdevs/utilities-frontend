@@ -44,10 +44,10 @@ export default function Sidebar() {
         }
 
         .logo {
-          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           height: var(--header-height);
-          padding-top: 15px;
-          text-align: center;
           box-shadow: inset 0 -1px 0 #ffffff55;
         }
 
