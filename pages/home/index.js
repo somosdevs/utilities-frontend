@@ -1,5 +1,6 @@
 import Head from "next/head";
 import useUser from "hooks/useUser";
+import AppLayout from "components/AppLayout";
 
 export default function Home() {
   const user = useUser();
@@ -9,14 +10,7 @@ export default function Home() {
       <Head>
         <title>UtilitiesX - Home</title>
       </Head>
-      <div>
-        <h1>Bienvenido, {user && user.username}</h1>
-      </div>
-      <style jsx>{`
-        h1 {
-          font-size: 5rem;
-        }
-      `}</style>
+      <AppLayout />
     </>
   );
 }

@@ -1,5 +1,7 @@
 :root {
   --primary: #09f;
+  --header-height: 60px;
+  --footer-height: 60px;
 }
 
 html,
