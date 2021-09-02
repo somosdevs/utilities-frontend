@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Home from "components/Icons/Home";
+import People from "components/Icons/People";
 
 const links = [
   {
+    icon: <Home />,
     title: "Home",
     url: "/home",
   },
   {
+    icon: <People />,
     title: "Team",
     url: "/team",
   },
@@ -21,7 +25,9 @@ export default function Sidebar() {
       <nav>
         <Link href="/home">
           <a className="logo">
-            <h1>UtilitiesX</h1>
+            <h1>
+              <span>Utilities</span>X
+            </h1>
           </a>
         </Link>
         <ul>
@@ -29,7 +35,7 @@ export default function Sidebar() {
             <li key={index}>
               <Link href={link.url}>
                 <a className={pathname === link.url ? "active" : ""}>
-                  <span>{link.title}</span>
+                  {link.icon} <span>{link.title}</span>
                 </a>
               </Link>
             </li>
@@ -65,14 +71,16 @@ export default function Sidebar() {
         }
 
         li a {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 100%;
           padding: 15px 0 15px 15%;
           font-size: 1.5rem;
         }
 
-        li a {
-          display: block;
-          height: 100%;
-          width: 100%;
+        li a span {
+          padding-left: 10px;
         }
 
         .active {
@@ -86,7 +94,7 @@ export default function Sidebar() {
           box-shadow: inset -4px 0 0 #ffffff;
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 430px) {
           nav {
             display: none;
           }
@@ -103,6 +111,14 @@ export default function Sidebar() {
         @media (max-width: 768px) {
           nav {
             width: 5rem;
+          }
+
+          h1 span {
+            display: none;
+          }
+
+          li a {
+            justify-content: center;
           }
 
           li span {

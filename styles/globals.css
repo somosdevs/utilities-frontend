@@ -24,6 +24,8 @@ a {
 
 img.image__rounded {
   border-radius: 50%;
+  border: 5px solid #000;
+  padding: 1px;
 }
 
 * {
