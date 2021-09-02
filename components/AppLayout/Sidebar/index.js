@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const links = [
   {
@@ -12,6 +13,9 @@ const links = [
 ];
 
 export default function Sidebar() {
+  const router = useRouter();
+  const { pathname } = router;
+
   return (
     <>
       <nav>
@@ -24,7 +28,7 @@ export default function Sidebar() {
           {links.map((link, index) => (
             <li key={index}>
               <Link href={link.url}>
-                <a>
+                <a className={pathname === link.url ? "active" : ""}>
                   <span>{link.title}</span>
                 </a>
               </Link>
@@ -38,7 +42,7 @@ export default function Sidebar() {
           top: 0;
           left: 0;
           height: 100vh;
-          width: 20%;
+          width: 25rem;
           background-color: var(--primary);
           color: var(--white);
         }
@@ -65,18 +69,24 @@ export default function Sidebar() {
           font-size: 1.5rem;
         }
 
-        li a,
-        li a span {
+        li a {
           display: block;
           height: 100%;
           width: 100%;
         }
 
-        li:hover {
+        .active {
           background-color: var(--primary-light);
+          color: var(--blue);
+          border-right: 4px solid var(--blue);
         }
 
-        @media (max-width: 500px) {
+        li:hover {
+          background-color: var(--primary-light);
+          box-shadow: inset -4px 0 0 #ffffff;
+        }
+
+        @media (max-width: 400px) {
           nav {
             display: none;
           }
@@ -86,6 +96,16 @@ export default function Sidebar() {
             al abrir este Sidebar se muestren solo los íconos
           */
           a span {
+            display: none;
+          }
+        }
+
+        @media (max-width: 768px) {
+          nav {
+            width: 5rem;
+          }
+
+          li span {
             display: none;
           }
         }

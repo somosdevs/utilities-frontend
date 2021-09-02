@@ -8,11 +8,11 @@ export default function AppLayout({ pageName }) {
   return (
     <>
       <header>
-        <h1>{pageName}</h1>
+        <h1 className="header__title">{pageName}</h1>
         <Link href="/home" /* Debe llevar a /profile */>
           <a>
             <Image
-              className="header__avatar"
+              className="image__rounded"
               src={user ? user.avatar : "/vercel.svg"}
               alt="Avatar Image"
               width="40px"
@@ -22,7 +22,7 @@ export default function AppLayout({ pageName }) {
         </Link>
       </header>
 
-      <style jsx global>{`
+      <style jsx>{`
         header {
           display: flex;
           align-items: center;
@@ -30,12 +30,8 @@ export default function AppLayout({ pageName }) {
           padding: 0 5%;
         }
 
-        h1 {
+        .header__title {
           font-size: 1.8rem;
-        }
-
-        .header__avatar {
-          border-radius: 50%;
         }
       `}</style>
     </>
