@@ -75,6 +75,7 @@ export default function Sidebar() {
           align-items: center;
           height: 100%;
           width: 100%;
+          margin: 3px 0;
           padding: 15px 0 15px 15%;
           font-size: 1.5rem;
         }
