@@ -11,13 +11,18 @@ export default function ProfielCard({
     <>
       <article>
         <div className="avatar">
-          <Image
-            src={avatar}
-            alt={name}
-            width="50px"
-            height="50px"
-            className="image__rounded"
-          />
+          {
+            avatar ? 
+            <Image
+              src={avatar }
+              alt={name}
+              width="50px"
+              height="50px"
+              className="image__rounded"
+            />
+            :
+            <span className="square_loading"></span>
+          }
         </div>
         <div className="info">
           <h2>{name}</h2>
@@ -54,6 +59,14 @@ export default function ProfielCard({
 
         div.avatar {
           padding-bottom: 15px;
+        }
+
+        span.square_loading {
+          display: blocK;
+          height: 50px;
+          width: 50px;
+          background-color: #b3b3b3;
+          border-radius: 9999px;
         }
 
         div.info {

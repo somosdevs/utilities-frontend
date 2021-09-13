@@ -6,7 +6,15 @@ import ProfileCard from "components/ProfileCard";
 
 export default function Home() {
   const user = useUser();
-  const [team, setTeam] = useState([]);
+  const [team, setTeam] = useState([
+    {
+      name: "Loading...",
+      discord: "Loading...",
+      avatar: "",
+      socialMedia: [],
+      technologies: [],
+    }
+  ]);
 
   useEffect(() => {
     fetch("/api/team")
