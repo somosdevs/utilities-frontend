@@ -1,13 +1,18 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Home from "components/Icons/Home";
 import People from "components/Icons/People";
+import SidebarLink from "components/SidebarLink";
 
 const links = [
   {
     icon: <Home />,
     title: "Home",
     url: "/home",
+  },
+  {
+    icon: <Home />,
+    title: "Projects",
+    url: "/projects",
   },
   {
     icon: <People />,
@@ -17,38 +22,32 @@ const links = [
 ];
 
 export default function Sidebar() {
-  const router = useRouter();
-  const { pathname } = router;
 
   return (
     <>
-      <nav>
-        <Link href="/home">
-          <a className="logo">
-            <h1>
-              <span>Utilities</span>X
-            </h1>
-          </a>
-        </Link>
-        <ul>
-          {links.map((link, index) => (
-            <li key={index}>
-              <Link href={link.url}>
-                <a className={pathname === link.url ? "active" : ""}>
-                  {link.icon} <span>{link.title}</span>
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <aside>
+        <nav>
+          <Link href="/home">
+            <a className="logo">
+              <h1>
+                <span>Utilities</span>X
+              </h1>
+            </a>
+          </Link>
+          <ul>
+            {links.map((link, index) => (
+              <SidebarLink key={index} link={link} />
+            ))}
+          </ul>
+        </nav>
+      </aside>
       <style jsx>{`
-        nav {
+        aside {
           position: sticky;
           top: 0;
           left: 0;
           height: 100vh;
-          width: 25rem;
+          width: 18rem;
           background-color: var(--primary);
           color: var(--white);
         }
@@ -62,26 +61,12 @@ export default function Sidebar() {
         }
 
         h1 {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
 
         ul {
           margin: 25px auto 0;
           list-style: none;
-        }
-
-        li a {
-          display: flex;
-          align-items: center;
-          height: 100%;
-          width: 100%;
-          margin: 3px 0;
-          padding: 15px 0 15px 15%;
-          font-size: 1.5rem;
-        }
-
-        li a span {
-          padding-left: 10px;
         }
 
         .active {
@@ -96,7 +81,7 @@ export default function Sidebar() {
         }
 
         @media (max-width: 430px) {
-          nav {
+          aside {
             display: none;
           }
 
@@ -110,7 +95,7 @@ export default function Sidebar() {
         }
 
         @media (max-width: 768px) {
-          nav {
+          aside {
             width: 5rem;
           }
 

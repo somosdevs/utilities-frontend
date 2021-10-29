@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import useUser from "hooks/useUser";
-import AppLayout from "components/AppLayout";
+import AppLayout from "layout/AppLayout";
 import ProfileCard from "components/ProfileCard";
 
 export default function Home() {
