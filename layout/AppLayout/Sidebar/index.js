@@ -1,7 +1,8 @@
 import Link from "next/link";
+import SidebarLink from "components/SidebarLink";
 import Home from "components/Icons/Home";
 import People from "components/Icons/People";
-import SidebarLink from "components/SidebarLink";
+import Project from "components/Icons/Project";
 
 const links = [
   {
@@ -10,7 +11,7 @@ const links = [
     url: "/home",
   },
   {
-    icon: <Home />,
+    icon: <Project />,
     title: "Projects",
     url: "/projects",
   },
