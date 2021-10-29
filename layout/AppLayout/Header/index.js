@@ -8,7 +8,7 @@ export default function AppLayout({ pageName }) {
   return (
     <>
       <header>
-        <h1 className="header__title">{pageName}</h1>
+        <h2>{pageName}</h2>
         <Link href="/home" /* Debe llevar a /profile */>
           <a>
             <Image
@@ -28,10 +28,7 @@ export default function AppLayout({ pageName }) {
           align-items: center;
           justify-content: space-between;
           padding: 0 5%;
-        }
-
-        .header__title {
-          font-size: 1.8rem;
+          font-size: 1.25rem;
         }
       `}</style>
     </>

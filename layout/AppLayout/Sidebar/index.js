@@ -58,27 +58,13 @@ export default function Sidebar() {
           align-items: center;
           justify-content: center;
           height: var(--header-height);
+          font-size: 1.5rem;
           box-shadow: inset 0 -1px 0 #ffffff55;
-        }
-
-        h1 {
-          font-size: 2rem;
         }
 
         ul {
           margin: 25px auto 0;
           list-style: none;
-        }
-
-        .active {
-          background-color: var(--primary-light);
-          color: var(--blue);
-          border-right: 4px solid var(--blue);
-        }
-
-        li:hover {
-          background-color: var(--primary-light);
-          box-shadow: inset -4px 0 0 #ffffff;
         }
 
         @media (max-width: 430px) {
