@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ProfielCard({
+export default function ProfileCard({
   name = "",
   discord = "",
   avatar = "",
@@ -8,26 +8,26 @@ export default function ProfielCard({
   technologies = [],
 }) {
   return (
-    <>
-      <article>
-        <div className="avatar">
-          {
-            avatar ? 
-            <Image
-              src={avatar }
-              alt={name}
-              width="50px"
-              height="50px"
-              className="image__rounded"
-            />
-            :
-            <span className="square_loading"></span>
-          }
-        </div>
-        <div className="info">
-          <h2>{name}</h2>
-          <h5>{discord}</h5>
-          <div className="technologies">
+    <article className="bg-custLight-primary h-96 w-64 rounded-xl overflow-hidden">
+      <div className="relative h-44 w-full">
+        {
+          avatar ? 
+          <Image
+            src={avatar }
+            alt={name}
+            layout="fill"
+            objectFit="cover"
+            className="object-center"
+          />
+          :
+          <span className="square_loading"></span>
+        }
+      </div>
+      <div className="flex flex-col h-full p-3 max-h-[210px]">
+        <div className="flex-auto">
+          <h3 className="text-xl font-bold">{name}</h3>
+          <h5 className="">{discord}</h5>
+          <div className="overflow-hidden">
             {technologies.map((lang) => (
               <span key={lang}>{lang}</span>
             ))}
@@ -45,69 +45,7 @@ export default function ProfielCard({
             </a>
           ))}
         </div>
-      </article>
-
-      <style jsx>{`
-        article {
-          width: 260px;
-          height: 260px;
-          margin: 10px;
-          padding: 20px 35px;
-          border-radius: 15px;
-          background-color: var(--light);
-        }
-
-        div.avatar {
-          padding-bottom: 15px;
-        }
-
-        span.square_loading {
-          display: blocK;
-          height: 50px;
-          width: 50px;
-          background-color: #b3b3b3;
-          border-radius: 9999px;
-        }
-
-        div.info {
-          height: 130px;
-        }
-
-        div.info h5 {
-          opacity: 0.6;
-          font-size: 1.4rem;
-          font-weight: 300;
-          padding: 2px 0 15px;
-        }
-
-        div.info h2 {
-          font-size: 2rem;
-        }
-
-        div.info div.technologies {
-          display: flex;
-          flex-wrap: wrap;
-          max-height: 50%;
-          overflow: auto;
-        }
-
-        div.info div.technologies span {
-          margin: 2px;
-          padding: 4px 5px;
-          border: 1px solid var(--primary);
-          border-radius: 9999px;
-          font-size: 1rem;
-          font-weight: bold;
-          color: var(--primary);
-        }
-
-        div.social_media a {
-          margin: 0 10px 0 0;
-          font-size: 1.4rem;
-          color: var(--primary);
-          text-decoration: underline;
-        }
-      `}</style>
-    </>
+      </div>
+    </article>
   );
 }

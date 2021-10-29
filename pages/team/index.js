@@ -39,6 +39,7 @@ export default function Home() {
           display: flex;
           flex-wrap: wrap;
           padding: 25px;
+          gap: 1rem;
         }
       `}</style>
     </>

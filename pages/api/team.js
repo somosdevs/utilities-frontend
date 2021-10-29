@@ -1,16 +1,16 @@
 const TEAM_MEMBERS = [
   {
     name: "Christopher Glood",
-    discord: "Chrosto#5009",
+    discord: "Consecutes#5009",
     avatar: "https://avatars.githubusercontent.com/u/36427177?v=4",
     socialMedia: [
       {
         name: "Github",
-        url: "https://github.com/akachrosto",
+        url: "https://github.com/consecutes",
       },
       {
         name: "Twitter",
-        url: "https://twitter.com/akachrosto",
+        url: "https://twitter.com/consecutes",
       },
     ],
     technologies: [],
