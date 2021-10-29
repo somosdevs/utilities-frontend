@@ -12,11 +12,11 @@ export default function Button({
       <button className={styles.button} onClick={handleClick}>
         {children}
       </button>
-      <style jsx>{`
-        background-color: ${backgroundColor};
+      {/* <style jsx>{`
+        backgroundcolor: ${backgroundColor};
         font-size: ${fontSize};
         color: ${color};
-      `}</style>
+      `}</style> */}
     </>
   );
 }
