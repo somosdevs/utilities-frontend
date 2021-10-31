@@ -8,7 +8,7 @@ export default function ProfileCard({
   technologies = [],
 }) {
   return (
-    <article className="bg-custLight-primary h-96 w-64 rounded-xl overflow-hidden">
+    <article className="bg-custLight-primary h-96 w-64 rounded-xl overflow-hidden group">
       <div className="relative h-44 w-full">
         {
           avatar ? 
@@ -17,7 +17,7 @@ export default function ProfileCard({
             alt={name}
             layout="fill"
             objectFit="cover"
-            className="object-center"
+            className="object-center transition-transform duration-500 group-hover:scale-110"
           />
           :
           <span className="square_loading"></span>
