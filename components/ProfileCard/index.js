@@ -26,7 +26,7 @@ export default function ProfileCard ({
         <div className="flex-auto">
           <h3 className="text-xl font-bold">{name}</h3>
           <h5 className="">{discord}</h5>
-          <div className="overflow-y-auto h-32 mt-5 text-sm">
+          <div className="overflow-y-auto h-36 mt-5 text-sm">
             {socialMedia.map((network) => (
               <a
                 key={network.name}
