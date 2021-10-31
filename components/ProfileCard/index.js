@@ -5,10 +5,9 @@ export default function ProfileCard({
   discord = "",
   avatar = "",
   socialMedia = [],
-  technologies = [],
 }) {
   return (
-    <article className="bg-custLight-primary h-96 w-64 rounded-xl overflow-hidden group">
+    <article className="bg-custLight-primary h-[410px] w-64 rounded-xl overflow-hidden group">
       <div className="relative h-44 w-full">
         {
           avatar ? 
@@ -27,23 +26,21 @@ export default function ProfileCard({
         <div className="flex-auto">
           <h3 className="text-xl font-bold">{name}</h3>
           <h5 className="">{discord}</h5>
-          <div className="overflow-hidden">
-            {technologies.map((lang) => (
-              <span key={lang}>{lang}</span>
+          <div className="overflow-hidden mt-5 text-sm">
+            {socialMedia.map((network) => (
+              <a
+                key={network.name}
+                href={network.url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center h-10 w-full mb-1 border border-black rounded text-center"
+              >
+                <span>
+                  {network.name}
+                </span>
+              </a>
             ))}
           </div>
-        </div>
-        <div className="social_media">
-          {socialMedia.map((network) => (
-            <a
-              key={network.name}
-              href={network.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {network.name}
-            </a>
-          ))}
         </div>
       </div>
     </article>
