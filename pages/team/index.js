@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react";
-import Head from "next/head";
-import useUser from "hooks/useUser";
-import AppLayout from "layout/AppLayout";
-import ProfileCard from "components/ProfileCard";
+import { useEffect, useState } from 'react'
+import Head from 'next/head'
+import useUser from 'hooks/useUser'
+import AppLayout from 'layout/AppLayout'
+import ProfileCard from 'components/ProfileCard'
 
-export default function Home() {
-  const user = useUser();
+export default function Home () {
+  const user = useUser()
   const [team, setTeam] = useState([
     {
-      name: "Loading...",
-      discord: "Loading...",
-      avatar: "",
+      name: 'Loading...',
+      discord: 'Loading...',
+      avatar: '',
       socialMedia: [],
-      technologies: [],
+      technologies: []
     }
-  ]);
+  ])
 
   useEffect(() => {
-    fetch("/api/team")
+    fetch('/api/team')
       .then((res) => res.json())
-      .then(setTeam);
-  }, []);
+      .then(setTeam)
+  }, [])
 
   return (
     <>
@@ -43,5 +43,5 @@ export default function Home() {
         }
       `}</style>
     </>
-  );
+  )
 }
