@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react'
 
-export default function SvgComponent(props) {
+export default function SvgComponent (props) {
   return (
     <svg
       width={32}
@@ -23,5 +23,5 @@ export default function SvgComponent(props) {
         />
       </g>
     </svg>
-  );
+  )
 }

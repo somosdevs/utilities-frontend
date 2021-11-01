@@ -1,11 +1,11 @@
-import styles from "./Button.module.css";
+import styles from './Button.module.css'
 
-export default function Button({
+export default function Button ({
   children,
   handleClick,
-  backgroundColor = "#fff",
-  color = "#000",
-  fontSize = "1.6rem",
+  backgroundColor = '#fff',
+  color = '#000',
+  fontSize = '1.6rem'
 }) {
   return (
     <>
@@ -18,5 +18,5 @@ export default function Button({
         color: ${color};
       `}</style> */}
     </>
-  );
+  )
 }

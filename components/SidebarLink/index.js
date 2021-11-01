@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-export default function SidebarLink({ link }) {
-  const router = useRouter();
-  const { pathname } = router;
+export default function SidebarLink ({ link }) {
+  const router = useRouter()
+  const { pathname } = router
   return (
     <li className="h-12 w-full mb-2 text-base">
       <Link href={link.url}>
@@ -15,7 +15,7 @@ export default function SidebarLink({ link }) {
           px-6
           rounded-lg
           hover:bg-custLight-primary
-          ${pathname === link.url ? "bg-custLight-primary text-cust-blue font-bold" : ""}`}
+          ${pathname === link.url ? 'bg-custLight-primary text-cust-blue font-bold' : ''}`}
         >
           {link.icon} <span className="pl-4">{link.title}</span>
         </a>

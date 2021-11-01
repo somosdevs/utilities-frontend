@@ -1,9 +1,9 @@
-import Head from "next/head";
-import useUser from "hooks/useUser";
-import AppLayout from "layout/AppLayout";
+import Head from 'next/head'
+import useUser from 'hooks/useUser'
+import AppLayout from 'layout/AppLayout'
 
-export default function Home() {
-  const user = useUser();
+export default function Home () {
+  useUser()
 
   return (
     <>
@@ -12,5 +12,5 @@ export default function Home() {
       </Head>
       <AppLayout pageName="Home"></AppLayout>
     </>
-  );
+  )
 }
