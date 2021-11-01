@@ -9,6 +9,7 @@ export default function useFetch (url) {
       fetch(url)
         .then(response => response.json())
         .then(response => {
+          if (!response.ok) return setStatus('rejected')
           setStatus('resolved')
           setData(response)
         })
