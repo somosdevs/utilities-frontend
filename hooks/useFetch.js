@@ -6,12 +6,14 @@ export default function useFetch (url) {
 
   useEffect(() => {
     try {
-      fetch(url)
-        .then(response => response.json())
+      window.fetch(url)
         .then(response => {
           if (!response.ok) return setStatus('rejected')
+          return response.json()
+        })
+        .then(response => {
           setStatus('resolved')
-          setData(response)
+          return setData(response)
         })
     } catch (error) {
       setStatus('rejected')
