@@ -1,16 +1,14 @@
 import { firestore } from 'firebase/admin'
+import withValidation from 'middlewares/withValidation'
+import { createProductSchema } from 'schemas/projects.schema'
 
-export default (req, res) => {
+const Projects = (req, res) => {
   if (req.method === 'POST') {
-    try {
-      firestore
-        .collection('projects')
-        .add(req.body)
+    firestore
+      .collection('projects')
+      .add(req.body)
 
-      return res.status(200).json({ message: 'OK', data: req.body })
-    } catch (err) {
-      res.status(400).json({ message: 'ERROR', data: err })
-    }
+    return res.status(201).json({ message: 'Created successfully', data: req.body })
   }
 
   return firestore
@@ -27,3 +25,5 @@ export default (req, res) => {
       res.status(200).json(items)
     })
 }
+
+export default withValidation(Projects, createProductSchema)
