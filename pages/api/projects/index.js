@@ -4,11 +4,13 @@ import { createProductSchema } from 'schemas/projects.schema'
 
 const Projects = (req, res) => {
   if (req.method === 'POST') {
+    const { securityKey, ...data } = req.body
+
     firestore
       .collection('projects')
-      .add(req.body)
+      .add(data)
 
-    return res.status(201).json({ message: 'Created successfully', data: req.body })
+    return res.status(201).json({ message: 'Created successfully', data })
   }
 
   return firestore
