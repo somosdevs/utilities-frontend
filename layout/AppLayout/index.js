@@ -1,8 +1,8 @@
-import styles from "./AppLayout.module.css";
-import Sidebar from "./Sidebar";
-import Header from "./Header";
+import styles from './AppLayout.module.css'
+import Sidebar from './Sidebar'
+import Header from './Header'
 
-export default function AppLayout({ pageName, children }) {
+export default function AppLayout ({ pageName, children }) {
   return (
     <>
       <div className={styles.AppLayout}>
@@ -23,5 +23,5 @@ export default function AppLayout({ pageName, children }) {
         }
       `}</style>
     </>
-  );
+  )
 }

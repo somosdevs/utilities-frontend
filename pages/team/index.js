@@ -5,7 +5,7 @@ import AppLayout from 'layout/AppLayout'
 import ProfileCard from 'components/ProfileCard'
 
 export default function Home () {
-  const user = useUser()
+  useUser()
   const [team, setTeam] = useState([
     {
       name: 'Loading...',
@@ -38,7 +38,6 @@ export default function Home () {
         section {
           display: flex;
           flex-wrap: wrap;
-          padding: 25px;
           gap: 1rem;
         }
       `}</style>
