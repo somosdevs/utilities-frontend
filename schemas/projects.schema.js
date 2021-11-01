@@ -10,7 +10,7 @@ const createProductSchema = Joi.object({
   name: name.required(),
   preview: preview.optional(),
   languages: languages.required(),
-  link: link.required(),
+  link: link.optional(),
   repoUrl: repoUrl.optional()
 })
 
