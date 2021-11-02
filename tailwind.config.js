@@ -1,31 +1,31 @@
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   darkMode: 'class', // or 'media' or 'class'
-  mode: "jit",
+  mode: 'jit',
   purge: {
     enabled: true,
-    content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
+    content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}']
   },
   theme: {
     colors: {
       ...colors,
       cust: {
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        light: "var(--light)",
-        black: "var(--black)",
-        white: "var(--white)",
-        blue: "var(--blue)",
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        light: 'var(--light)',
+        black: 'var(--black)',
+        white: 'var(--white)',
+        blue: 'var(--blue)'
       },
       custLight: {
-        primary: "var(--primary-light)",
-      },
+        primary: 'var(--primary-light)'
+      }
     },
-    extend: {},
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 }
