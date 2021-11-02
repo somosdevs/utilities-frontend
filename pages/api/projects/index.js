@@ -3,14 +3,16 @@ import withValidation from 'middlewares/withValidation'
 import { createProductSchema } from 'schemas/projects.schema'
 
 const Projects = (req, res) => {
+  const createdAt = new Date()
+
   if (req.method === 'POST') {
     const { securityKey, ...data } = req.body
 
     firestore
       .collection('projects')
-      .add(data)
+      .add({ createdAt: new Date(), ...data })
 
-    return res.status(201).json({ message: 'Created successfully', data })
+    return res.status(201).json({ message: 'Created successfully', createdAt, data })
   }
 
   return firestore

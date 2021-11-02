@@ -16,10 +16,12 @@ export default function Projects () {
       <AppLayout pageName="Projects">
         { status === 'pending' && 'Loading...' }
         { status === 'rejected' && 'An error has ocurred' }
-        {
-          status === 'resolved' &&
-          projects.map(project => <ProjectCard key={project.id} {...project} />)
-        }
+        <section className="flex flex-wrap gap-6">
+          {
+            status === 'resolved' &&
+            projects.map(project => <ProjectCard key={project.id} {...project} />)
+          }
+        </section>
       </AppLayout>
     </>
   )
