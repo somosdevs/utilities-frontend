@@ -13,6 +13,8 @@ export default function ProjectCard ({
   const time = new Date((createdAt._seconds * 1000) + (createdAt._nanoseconds / 1000000))
   const createDate = time.toLocaleDateString()
 
+  console.log(link)
+
   return (
     <article className="bg-custLight-primary h-80 w-64 rounded-xl overflow-hidden">
       <div className="relative h-24 w-full">
@@ -33,20 +35,44 @@ export default function ProjectCard ({
           <h3 className="text-xl font-bold">{name}</h3>
           <h5 className="text-base text-gray-600">{createDate}</h5>
           <div className="flex items-center gap-1 h-8 mt-2 mb-4 w-full text-center">
-            <a
+          <a
               href={link}
-              className="flex items-center justify-around w-full p-1 border border-black rounded-md"
+              target="_blank"
+              rel="noreferrer"
+              className={`
+                flex 
+                items-center 
+                justify-around 
+                w-full 
+                p-1 
+                border 
+                border-black 
+                rounded-md 
+                ${link ? '' : 'opacity-60 pointer-events-none'}`}
             >
               <span></span>
               Link
-              <ExternalLink /></a>
+              <ExternalLink />
+            </a>
             <a
-              href={link}
-              className="flex items-center justify-around w-full p-1 border border-black rounded-md"
+              href={repoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={`
+                flex 
+                items-center 
+                justify-around 
+                w-full 
+                p-1 
+                border 
+                border-black 
+                rounded-md 
+                ${repoUrl ? '' : 'opacity-60 pointer-events-none'}`}
             >
               <span></span>
               Github
-              <ExternalLink /></a>
+              <ExternalLink />
+            </a>
           </div>
           <div className="overflow-y-auto h-20 text-xs">
             {languages.map((lang) => (
