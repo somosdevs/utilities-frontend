@@ -1,12 +1,30 @@
 import Head from 'next/head'
 import useUser from 'hooks/useUser'
 import AppLayout from 'layout/AppLayout'
-import useFetch from 'hooks/useFetch'
 import ProjectCard from 'components/ProjectCard'
 
-export default function Projects () {
+export async function getServerSideProps (context) {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects`)
+  const data = await response.json()
+
+  if (!data) {
+    return {
+      props: {
+        status: 'rejected'
+      }
+    }
+  }
+
+  return {
+    props: {
+      status: 'resolved',
+      projects: data
+    }
+  }
+}
+
+export default function Projects ({ status, projects }) {
   useUser()
-  const { data: projects, status } = useFetch('/api/projects')
 
   return (
     <>
@@ -14,7 +32,6 @@ export default function Projects () {
         <title>UtilitiesX - Projects</title>
       </Head>
       <AppLayout pageName="Projects">
-        { status === 'pending' && 'Loading...' }
         { status === 'rejected' && 'An error has ocurred' }
         <section className="flex flex-wrap gap-6">
           {
