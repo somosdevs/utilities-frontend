@@ -13,8 +13,6 @@ export default function ProjectCard ({
   const time = new Date((createdAt._seconds * 1000) + (createdAt._nanoseconds / 1000000))
   const createDate = time.toLocaleDateString()
 
-  console.log(link)
-
   return (
     <article className="bg-custLight-primary h-80 w-64 rounded-xl overflow-hidden">
       <div className="relative h-24 w-full">
@@ -44,15 +42,22 @@ export default function ProjectCard ({
                 items-center 
                 justify-around 
                 w-full 
-                p-1 
-                border 
-                border-black 
-                rounded-md 
-                ${link ? '' : 'opacity-60 pointer-events-none'}`}
+                p-1
+                bg-cust-primary
+                border
+                border-cust-primary
+                text-white
+                rounded-lg
+                transition
+                duration-300
+                hover:opacity-80
+                hover:text-cust-blue
+                ${link ? '' : 'opacity-40 pointer-events-none'}
+              `}
             >
               <span></span>
               Link
-              <ExternalLink />
+              {link ? <ExternalLink /> : <span></span>}
             </a>
             <a
               href={repoUrl}
@@ -65,13 +70,18 @@ export default function ProjectCard ({
                 w-full 
                 p-1 
                 border 
-                border-black 
-                rounded-md 
-                ${repoUrl ? '' : 'opacity-60 pointer-events-none'}`}
+                border-cust-primary
+                rounded-lg
+                transition
+                duration-300
+                hover:bg-cust-primary
+                hover:text-cust-blue
+                ${repoUrl ? '' : 'opacity-60 pointer-events-none'}
+              `}
             >
               <span></span>
               Github
-              <ExternalLink />
+              {link ? <ExternalLink /> : <span></span>}
             </a>
           </div>
           <div className="overflow-y-auto h-20 text-xs">
