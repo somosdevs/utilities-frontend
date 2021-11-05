@@ -1,26 +1,30 @@
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import useUser from 'hooks/useUser'
 import AppLayout from 'layout/AppLayout'
 import ProfileCard from 'components/ProfileCard'
 
-export default function Home () {
-  useUser()
-  const [team, setTeam] = useState([
-    {
-      name: 'Loading...',
-      discord: 'Loading...',
-      avatar: '',
-      socialMedia: [],
-      technologies: []
-    }
-  ])
+export async function getServerSideProps (context) {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/team`)
+  const data = await response.json()
 
-  useEffect(() => {
-    fetch('/api/team')
-      .then((res) => res.json())
-      .then(setTeam)
-  }, [])
+  if (!data) {
+    return {
+      props: {
+        status: 'rejected'
+      }
+    }
+  }
+
+  return {
+    props: {
+      status: 'resolved',
+      data
+    }
+  }
+}
+
+export default function Home ({ status, data }) {
+  useUser()
 
   return (
     <>
@@ -29,9 +33,15 @@ export default function Home () {
       </Head>
       <AppLayout pageName="Team">
         <section>
-          {team.map((member) => (
-            <ProfileCard key={member.name} {...member} />
-          ))}
+          {
+            status === 'rejected' && 'An error has ocurred'
+          }
+          {
+            status === 'resolved' &&
+            data.map((member) => (
+              <ProfileCard key={member.name} {...member} />
+            ))
+          }
         </section>
       </AppLayout>
       <style jsx>{`

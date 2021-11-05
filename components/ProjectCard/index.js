@@ -2,11 +2,11 @@ import Image from 'next/image'
 import ExternalLink from 'components/Icons/ExternalLink'
 
 export default function ProjectCard ({
-  id,
+  loading = false,
   name = '',
   preview = '',
   languages = [],
-  createdAt,
+  createdAt = { _seconds: 100000, _nanoseconds: 1 },
   link = '',
   repoUrl = ''
 }) {
@@ -30,7 +30,7 @@ export default function ProjectCard ({
       </div>
       <div className="flex flex-col h-full p-3 max-h-[210px]">
         <div className="">
-          <h3 className="text-xl font-bold">{name}</h3>
+          <h3 className="text-xl font-bold">{loading ? 'Loading...' : name}</h3>
           <h5 className="text-base text-gray-600">{createDate}</h5>
           <div className="flex items-center gap-1 h-8 mt-2 mb-4 w-full text-center">
           <a
@@ -88,7 +88,18 @@ export default function ProjectCard ({
             {languages.map((lang) => (
               <p
                 key={lang}
-                className="inline-block h-auto w-auto mx-1 mb-1 px-2 py-[3px] border border-black rounded-sm text-center"
+                className="
+                  inline-block
+                  h-auto
+                  w-auto
+                  mx-1
+                  mb-1
+                  px-2
+                  py-[3px]
+                  border
+                  border-black
+                  rounded-sm
+                  text-center"
               >
                 {lang}
               </p>
