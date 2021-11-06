@@ -7,7 +7,7 @@ const languages = Joi.array().items(Joi.string()) // .valid() para validar los v
 const link = Joi.string().uri()
 const repoUrl = Joi.string().uri()
 
-const createProductSchema = Joi.object({
+export const createProductSchema = Joi.object({
   securityKey: securityKey.required(),
   name: name.required(),
   preview: preview.optional(),
@@ -15,7 +15,3 @@ const createProductSchema = Joi.object({
   link: link.optional(),
   repoUrl: repoUrl.optional()
 })
-
-export {
-  createProductSchema
-}
