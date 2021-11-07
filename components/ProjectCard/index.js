@@ -63,7 +63,7 @@ export default function ProjectCard ({
                 duration-300
                 hover:opacity-80
                 hover:text-cust-blue
-                ${link ? '' : 'opacity-40 pointer-events-none'}
+                ${link ? '' : 'opacity-20 pointer-events-none'}
               `}
             >
               <span></span>
@@ -87,7 +87,7 @@ export default function ProjectCard ({
                 duration-300
                 hover:bg-cust-primary
                 hover:text-cust-blue
-                ${repoUrl ? '' : 'opacity-60 pointer-events-none'}
+                ${repoUrl ? '' : 'opacity-20 pointer-events-none'}
               `}
             >
               <span></span>
