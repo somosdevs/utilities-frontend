@@ -4,7 +4,7 @@ import External from 'components/Icons/ExternalLink'
 
 export default function Popover () {
   return (
-    <div className="absolute top-[50px] -right-8 h-auto w-28 py-1 text-base text-center bg-white rounded-lg border shadow-md overflow-hidden">
+    <div className="absolute z-10 top-[50px] -right-8 h-auto w-28 py-1 text-base text-center bg-white rounded-lg border shadow-md overflow-hidden">
       <ul>
         <li className="h-10 w-full border-b-2">
           <a href="#" className="flex items-center gap-2 px-3 h-full w-full hover:bg-gray-100">
