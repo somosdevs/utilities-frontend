@@ -15,7 +15,7 @@ export default function ProjectCard ({
   const createDate = time.toLocaleDateString()
 
   return (
-    <article className="bg-custLight-primary h-80 w-64 rounded-xl overflow-hidden">
+    <article className={`${loading ? 'bg-white border' : 'bg-custLight-primary'} h-80 w-64 rounded-xl overflow-hidden`}>
       <div className="relative h-24 w-full">
         {
           loading
