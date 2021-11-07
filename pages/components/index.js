@@ -1,9 +1,12 @@
-import Skeleton from 'components/Skeleton'
+// import Skeleton from 'components/Skeleton'
+import Anchor from 'components/Button/Anchor'
 
 export default function Components () {
   return (
     <div className="m-10">
-      <Skeleton height="20px" width="100px" />
+      <Anchor href="#" external>
+        Link
+      </Anchor>
     </div>
   )
 }

@@ -1,5 +1,3 @@
-import styles from './Button.module.css'
-
 export default function Button ({
   children,
   handleClick,
@@ -9,14 +7,9 @@ export default function Button ({
 }) {
   return (
     <>
-      <button className={styles.button} onClick={handleClick}>
+      <button onClick={handleClick}>
         {children}
       </button>
-      {/* <style jsx>{`
-        backgroundcolor: ${backgroundColor};
-        font-size: ${fontSize};
-        color: ${color};
-      `}</style> */}
     </>
   )
 }
