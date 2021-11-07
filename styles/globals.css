@@ -38,3 +38,9 @@ img.image__rounded {
   margin: 0;
   box-sizing: border-box;
 }
+
+.gradient__bg {
+  color: white;
+  background: rgb(68,161,223);
+  background: linear-gradient(90deg, rgba(68,161,223,1) 6%, rgba(40,107,152,1) 87%);
+}

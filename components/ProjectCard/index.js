@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import ExternalLink from 'components/Icons/ExternalLink'
+import Skeleton from 'components/Skeleton'
 
 export default function ProjectCard ({
   loading = false,
@@ -17,21 +18,31 @@ export default function ProjectCard ({
     <article className="bg-custLight-primary h-80 w-64 rounded-xl overflow-hidden">
       <div className="relative h-24 w-full">
         {
-          preview
-            ? <Image
+          loading
+            ? <Skeleton height="100%" />
+            : preview
+              ? <Image
                 src={preview}
                 alt={name}
                 layout="fill"
                 objectFit="cover"
                 className="bg-black object-center"
               />
-            : <div className="h-full bg-cust-primary"></div>
+              : <div className="h-full bg-cust-primary"></div>
         }
       </div>
       <div className="flex flex-col h-full p-3 max-h-[210px]">
         <div className="">
-          <h3 className="text-xl font-bold">{loading ? 'Loading...' : name}</h3>
-          <h5 className="text-base text-gray-600">{createDate}</h5>
+          <h3 className="h-[28px] mb-px text-xl font-bold">{
+            loading
+              ? <Skeleton rounded="4px" height="22px" />
+              : name
+          }</h3>
+          <h5 className="h-[24px] text-base text-gray-600">{
+            loading
+              ? <Skeleton rounded="4px" height="16px" width="120px" />
+              : createDate
+          }</h5>
           <div className="flex items-center gap-1 h-8 mt-2 mb-4 w-full text-center">
           <a
               href={link}
@@ -95,11 +106,13 @@ export default function ProjectCard ({
                   mx-1
                   mb-1
                   px-2
-                  py-[3px]
-                  border
-                  border-black
-                  rounded-sm
-                  text-center"
+                  py-[5px]
+                  gradient__bg
+                  text-center
+                  font-bold
+
+                  rounded-md
+                  "
               >
                 {lang}
               </p>

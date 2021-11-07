@@ -1,29 +1,34 @@
-import Link from "next/link";
-import SidebarLink from "components/SidebarLink";
-import Home from "components/Icons/Home";
-import People from "components/Icons/People";
-import Project from "components/Icons/Project";
+import Link from 'next/link'
+import SidebarLink from 'components/SidebarLink'
+import Home from 'components/Icons/Home'
+import People from 'components/Icons/People'
+import Project from 'components/Icons/Project'
+import Code from 'components/Icons/Code'
 
 const links = [
   {
     icon: <Home />,
-    title: "Home",
-    url: "/home",
+    title: 'Home',
+    url: '/home'
   },
   {
     icon: <Project />,
-    title: "Projects",
-    url: "/projects",
+    title: 'Projects',
+    url: '/projects'
+  },
+  {
+    icon: <Code />,
+    title: 'Snippets',
+    url: '/snippets'
   },
   {
     icon: <People />,
-    title: "Team",
-    url: "/team",
-  },
-];
+    title: 'Team',
+    url: '/team'
+  }
+]
 
-export default function Sidebar() {
-
+export default function Sidebar () {
   return (
     <>
       <aside>
@@ -100,5 +105,5 @@ export default function Sidebar() {
         }
       `}</style>
     </>
-  );
+  )
 }
