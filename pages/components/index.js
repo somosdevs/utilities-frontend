@@ -4,7 +4,7 @@ import Anchor from 'components/Button/Anchor'
 export default function Components () {
   return (
     <div className="m-10">
-      <Anchor href="#" external>
+      <Anchor href="#" external outlined>
         Link
       </Anchor>
     </div>

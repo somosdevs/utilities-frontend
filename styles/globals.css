@@ -41,6 +41,6 @@ img.image__rounded {
 
 .gradient__bg {
   color: white;
-  background: rgb(68,161,223);
-  background: linear-gradient(90deg, rgba(68,161,223,1) 6%, rgba(40,107,152,1) 87%);
+  background: rgb(73,153,205);
+  background: linear-gradient(90deg, rgba(73,153,205,1) 6%, rgba(40,107,152,1) 84%);
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import ExternalLink from 'components/Icons/ExternalLink'
 import Skeleton from 'components/Skeleton'
+import Anchor from 'components/Button/Anchor'
 
 export default function ProjectCard ({
   loading = false,
@@ -44,56 +44,8 @@ export default function ProjectCard ({
               : createDate
           }</h5>
           <div className="flex items-center gap-1 h-8 mt-2 mb-4 w-full text-center">
-          <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              className={`
-                flex 
-                items-center 
-                justify-around 
-                w-full 
-                p-1
-                bg-cust-primary
-                border
-                border-cust-primary
-                text-white
-                rounded-lg
-                transition
-                duration-300
-                hover:opacity-80
-                hover:text-cust-blue
-                ${link ? '' : 'opacity-20 pointer-events-none'}
-              `}
-            >
-              <span></span>
-              Link
-              {link ? <ExternalLink /> : <span></span>}
-            </a>
-            <a
-              href={repoUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={`
-                flex 
-                items-center 
-                justify-around 
-                w-full 
-                p-1 
-                border 
-                border-cust-primary
-                rounded-lg
-                transition
-                duration-300
-                hover:bg-cust-primary
-                hover:text-cust-blue
-                ${repoUrl ? '' : 'opacity-20 pointer-events-none'}
-              `}
-            >
-              <span></span>
-              Github
-              {link ? <ExternalLink /> : <span></span>}
-            </a>
+            <Anchor href={link} width="w-full" disable={!link} rounded="rounded-lg" external>Link</Anchor>
+            <Anchor href={repoUrl} width="w-full" disable={!repoUrl} rounded="rounded-lg" outlined external>Github</Anchor>
           </div>
           <div className="overflow-y-auto h-20 text-xs">
             {languages.map((lang) => (
