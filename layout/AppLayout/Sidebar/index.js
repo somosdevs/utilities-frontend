@@ -53,7 +53,7 @@ export default function Sidebar () {
           top: 0;
           left: 0;
           height: 100vh;
-          width: 18rem;
+          width: 16rem;
           background-color: var(--primary);
           color: var(--white);
         }

@@ -1,25 +1,30 @@
-import Image from "next/image";
-import useUser from "hooks/useUser";
-import Link from "next/link";
+import { useState } from 'react'
+import Image from 'next/image'
+import useUser from 'hooks/useUser'
+import Popover from 'components/Popover'
 
-export default function AppLayout({ pageName }) {
-  const user = useUser();
+export default function AppLayout ({ pageName }) {
+  const user = useUser()
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false)
+
+  const handleClick = () => setIsPopoverOpen(!isPopoverOpen)
 
   return (
     <>
       <header>
         <h2>{pageName}</h2>
-        <Link href="/home" /* Debe llevar a /profile */>
-          <a>
+        <div className="button__popover">
+          <button onClick={handleClick}>
             <Image
               className="image__rounded"
-              src={user ? user.avatar : "/vercel.svg"}
+              src={user ? user.avatar : '/vercel.svg'}
               alt="Avatar Image"
               width="40px"
               height="40px"
             />
-          </a>
-        </Link>
+          </button>
+          { isPopoverOpen && <Popover /> }
+        </div>
       </header>
 
       <style jsx>{`
@@ -27,10 +32,18 @@ export default function AppLayout({ pageName }) {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0 5%;
+          height: var(--header-height);
+          width: 100%;
+          padding: 0 10%;
           font-size: 1.25rem;
+          background-color: var(--secondary);
+          box-shadow: inset 0 -1px 0 #ffffff55;
+        }
+
+        .button__popover {
+          position: relative;
         }
       `}</style>
     </>
-  );
+  )
 }

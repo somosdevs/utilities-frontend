@@ -13,15 +13,6 @@ export default function AppLayout ({ pageName, children }) {
           <footer className={styles.footer}></footer>
         </div>
       </div>
-
-      <style jsx global>{`
-        header {
-          height: var(--header-height);
-          width: 100%;
-          background-color: var(--secondary);
-          box-shadow: inset 0 -1px 0 #ffffff55;
-        }
-      `}</style>
     </>
   )
 }
