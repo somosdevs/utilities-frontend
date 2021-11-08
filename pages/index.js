@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import useUser, { USER_STATES } from 'hooks/useUser'
-import Button from 'components/Button'
 import Github from 'components/Icons/Github'
 import Loading from 'components/Icons/Loading'
 import styles from 'styles/Home.module.css'
@@ -31,21 +30,18 @@ export default function Home () {
       <main className={styles.main}>
         <div className={styles.container}>
           <h1 className={styles.title}>Utilities X</h1>
-          <p className={styles.description}>You know what it is 😉</p>
-          <div className={styles.buttonContainer}>
-            {user === USER_STATES.NOT_LOGGED && (
-              <Button
-                className={styles.button}
-                backgroundColor="#0d1117"
-                fontSize="2rem"
-                color="#fff"
-                handleClick={handleClick}
-              >
-                <Github /> Sign in with Github
-              </Button>
-            )}
-            {user === USER_STATES.NOT_KNOWN && <Loading />}
-          </div>
+          {user === USER_STATES.NOT_LOGGED && (
+            <button
+              className={styles.button}
+              backgroundColor="#0d1117"
+              fontSize="2rem"
+              color="#fff"
+              handleClick={handleClick}
+            >
+              <Github /> Sign in with Github
+            </button>
+          )}
+          {user === USER_STATES.NOT_KNOWN && <Loading />}
         </div>
       </main>
     </>
