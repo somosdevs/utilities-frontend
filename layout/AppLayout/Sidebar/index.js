@@ -25,81 +25,6 @@ const links = [
     icon: <People />,
     title: 'Team',
     url: '/team'
-  },
-  {
-    icon: <Project />,
-    title: 'Projects',
-    url: '/projects'
-  },
-  {
-    icon: <Code />,
-    title: 'Snippets',
-    url: '/snippets'
-  },
-  {
-    icon: <People />,
-    title: 'Team',
-    url: '/team'
-  },
-  {
-    icon: <Project />,
-    title: 'Projects',
-    url: '/projects'
-  },
-  {
-    icon: <Code />,
-    title: 'Snippets',
-    url: '/snippets'
-  },
-  {
-    icon: <People />,
-    title: 'Team',
-    url: '/team'
-  },
-  {
-    icon: <Project />,
-    title: 'Projects',
-    url: '/projects'
-  },
-  {
-    icon: <Code />,
-    title: 'Snippets',
-    url: '/snippets'
-  },
-  {
-    icon: <People />,
-    title: 'Team',
-    url: '/team'
-  },
-  {
-    icon: <Project />,
-    title: 'Projects',
-    url: '/projects'
-  },
-  {
-    icon: <Code />,
-    title: 'Snippets',
-    url: '/snippets'
-  },
-  {
-    icon: <People />,
-    title: 'Team',
-    url: '/team'
-  },
-  {
-    icon: <Project />,
-    title: 'Projects',
-    url: '/projects'
-  },
-  {
-    icon: <Code />,
-    title: 'Snippets',
-    url: '/snippets'
-  },
-  {
-    icon: <People />,
-    title: 'Team',
-    url: '/team'
   }
 ]
 
@@ -158,25 +83,14 @@ export default function Sidebar () {
             Esto será para cuando esté en tamaño móvil,
             al abrir este Sidebar se muestren solo los íconos
           */
-          a span {
-            display: none;
-          }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
           nav {
             width: 5rem;
           }
 
-          h1 span {
-            display: none;
-          }
-
-          li a {
-            justify-content: center;
-          }
-
-          li span {
+          .logo span {
             display: none;
           }
         }
