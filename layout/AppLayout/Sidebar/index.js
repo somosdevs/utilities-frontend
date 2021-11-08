@@ -75,14 +75,9 @@ export default function Sidebar () {
         }
 
         @media (max-width: 430px) {
-          aside {
+          nav {
             display: none;
           }
-
-          /* 
-            Esto será para cuando esté en tamaño móvil,
-            al abrir este Sidebar se muestren solo los íconos
-          */
         }
 
         @media (max-width: 767px) {

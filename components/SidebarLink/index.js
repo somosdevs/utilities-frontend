@@ -10,14 +10,16 @@ export default function SidebarLink ({ link }) {
         <a className={`
           flex
           items-center
+          justify-center
+          md:justify-start
           h-full
           mx-3
-          px-6
+          md:px-6
           rounded-lg
           hover:bg-custLight-primary
           ${pathname === link.url ? 'bg-custLight-primary text-cust-blue font-bold' : ''}`}
         >
-          {link.icon} <span className="pl-4">{link.title}</span>
+          {link.icon} <span className="pl-4 hidden md:inline">{link.title}</span>
         </a>
       </Link>
     </li>
