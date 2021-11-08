@@ -66,7 +66,7 @@ export default function Sidebar () {
 
         ul {
           display: block;
-          height: 100%;
+          height: calc(100% - var(--header-height) - 20px);
           margin-top: 20px;
           list-style: none;
           overflow-x: hidden;
