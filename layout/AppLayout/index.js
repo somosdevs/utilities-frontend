@@ -16,3 +16,14 @@ export default function AppLayout ({ pageName, children }) {
     </>
   )
 }
+
+/*
+    h1.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65px;
+  font-size: 1.5rem;
+  box-shadow: inset 0 -1px 0 #ffffff55;
+}
+  */

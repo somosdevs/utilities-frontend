@@ -25,30 +25,101 @@ const links = [
     icon: <People />,
     title: 'Team',
     url: '/team'
+  },
+  {
+    icon: <Project />,
+    title: 'Projects',
+    url: '/projects'
+  },
+  {
+    icon: <Code />,
+    title: 'Snippets',
+    url: '/snippets'
+  },
+  {
+    icon: <People />,
+    title: 'Team',
+    url: '/team'
+  },
+  {
+    icon: <Project />,
+    title: 'Projects',
+    url: '/projects'
+  },
+  {
+    icon: <Code />,
+    title: 'Snippets',
+    url: '/snippets'
+  },
+  {
+    icon: <People />,
+    title: 'Team',
+    url: '/team'
+  },
+  {
+    icon: <Project />,
+    title: 'Projects',
+    url: '/projects'
+  },
+  {
+    icon: <Code />,
+    title: 'Snippets',
+    url: '/snippets'
+  },
+  {
+    icon: <People />,
+    title: 'Team',
+    url: '/team'
+  },
+  {
+    icon: <Project />,
+    title: 'Projects',
+    url: '/projects'
+  },
+  {
+    icon: <Code />,
+    title: 'Snippets',
+    url: '/snippets'
+  },
+  {
+    icon: <People />,
+    title: 'Team',
+    url: '/team'
+  },
+  {
+    icon: <Project />,
+    title: 'Projects',
+    url: '/projects'
+  },
+  {
+    icon: <Code />,
+    title: 'Snippets',
+    url: '/snippets'
+  },
+  {
+    icon: <People />,
+    title: 'Team',
+    url: '/team'
   }
 ]
 
 export default function Sidebar () {
   return (
     <>
-      <aside>
-        <nav>
-          <Link href="/home">
-            <a className="logo">
-              <h1>
-                <span>Utilities</span>X
-              </h1>
-            </a>
-          </Link>
-          <ul>
-            {links.map((link, index) => (
-              <SidebarLink key={index} link={link} />
-            ))}
-          </ul>
-        </nav>
-      </aside>
+      <nav>
+        <Link href="/home">
+          <a className="logo">
+            <span>Utilities</span>X
+          </a>
+        </Link>
+        <ul>
+          {links.map((link, index) => (
+            <SidebarLink key={index} link={link} />
+          ))}
+        </ul>
+      </nav>
       <style jsx>{`
-        aside {
+        nav {
           position: sticky;
           top: 0;
           left: 0;
@@ -56,9 +127,10 @@ export default function Sidebar () {
           width: 16rem;
           background-color: var(--primary);
           color: var(--white);
+          scrollbar-width: 5px;
         }
 
-        .logo {
+        a.logo {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -68,8 +140,13 @@ export default function Sidebar () {
         }
 
         ul {
-          margin: 25px auto 0;
+          display: block;
+          height: 100%;
+          margin-top: 20px;
           list-style: none;
+          overflow-x: hidden;
+          overflow-y: auto;
+          overscroll-behavior: none;
         }
 
         @media (max-width: 430px) {
@@ -87,7 +164,7 @@ export default function Sidebar () {
         }
 
         @media (max-width: 768px) {
-          aside {
+          nav {
             width: 5rem;
           }
 
