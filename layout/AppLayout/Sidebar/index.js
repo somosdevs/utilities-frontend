@@ -83,6 +83,7 @@ export default function Sidebar () {
         @media (max-width: 767px) {
           nav {
             width: 5rem;
+            min-width:5rem;
           }
 
           .logo span {
