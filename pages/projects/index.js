@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import useUser from 'hooks/useUser'
 import useFetch from 'hooks/useFetch'
-import AppLayout from 'layout/AppLayout'
+import AppLayout from 'layouts/AppLayout'
 import ProjectCard from 'components/ProjectCard'
 
 export default function Projects () {

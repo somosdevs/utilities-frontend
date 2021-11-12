@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import useUser from 'hooks/useUser'
-import AppLayout from 'layout/AppLayout'
+import AppLayout from 'layouts/AppLayout'
 
 export default function Home () {
   useUser()

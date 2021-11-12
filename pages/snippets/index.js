@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import useUser from 'hooks/useUser'
-import AppLayout from 'layout/AppLayout'
+import AppLayout from 'layouts/AppLayout'
+import Code from 'components/Snippets/Code'
 
 export default function Projects () {
   useUser()
@@ -11,7 +12,9 @@ export default function Projects () {
         <title>UtilitiesX - Snippets</title>
       </Head>
       <AppLayout pageName="Snippets">
-        <section></section>
+        <section className="w-full">
+          <Code />
+        </section>
       </AppLayout>
     </>
   )
