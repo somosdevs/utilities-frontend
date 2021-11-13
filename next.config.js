@@ -9,8 +9,8 @@ module.exports = {
   rewrites: async () => {
     return [
       {
-        source: '/test',
-        destination: '/home'
+        source: '/dashboard',
+        destination: '/dashboard/home'
       }
     ]
   }

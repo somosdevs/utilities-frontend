@@ -39,7 +39,7 @@ export default function Sidebar () {
         </Link>
         <ul>
           {links.map((link, index) => (
-            <SidebarLink key={index} link={link} />
+            <SidebarLink key={index} icon={link.icon} title={link.title} url={'/dashboard' + link.url} />
           ))}
         </ul>
       </nav>
