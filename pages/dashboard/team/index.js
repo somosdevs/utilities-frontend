@@ -1,6 +1,4 @@
-import Head from 'next/head'
 import useUser from 'hooks/useUser'
-import AppLayout from 'layouts/AppLayout'
 import ProfileCard from 'components/ProfileCard'
 
 export async function getServerSideProps (context) {
@@ -28,22 +26,17 @@ export default function Home ({ status, data }) {
 
   return (
     <>
-      <Head>
-        <title>UtilitiesX - Team</title>
-      </Head>
-      <AppLayout pageName="Team">
-        <section>
-          {
-            status === 'rejected' && 'An error has ocurred'
-          }
-          {
-            status === 'resolved' &&
-            data.map((member) => (
-              <ProfileCard key={member.name} {...member} />
-            ))
-          }
-        </section>
-      </AppLayout>
+      <section>
+        {
+          status === 'rejected' && 'An error has ocurred'
+        }
+        {
+          status === 'resolved' &&
+          data.map((member) => (
+            <ProfileCard key={member.name} {...member} />
+          ))
+        }
+      </section>
       <style jsx>{`
         section {
           display: flex;

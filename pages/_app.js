@@ -1,17 +1,20 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import NProgress from 'nprogress'
+import AppLayout from 'layouts/AppLayout'
+import { capitalize } from 'utils/capitalize'
 
 import '../styles/globals.css'
 import '../styles/nprogress.css'
 
 function MyApp ({ Component, pageProps }) {
   const router = useRouter()
+  const { pathname } = router
 
   // Progress Bar (NProgress)
   useEffect(() => {
     const handleStart = (url) => {
-      console.log(`Loading ${url}`)
       NProgress.start()
     }
 
@@ -29,6 +32,21 @@ function MyApp ({ Component, pageProps }) {
       router.events.off('routeChangeError', handleStop)
     }
   }, [router])
+
+  // All /dashboard routes
+  if (pathname.includes('/dashboard')) {
+    const pageName = pathname.slice(11)
+    return (
+      <>
+        <Head>
+          <title>{capitalize(pageName)}</title>
+        </Head>
+        <AppLayout pageName={capitalize(pageName)}>
+          <Component {...pageProps} />
+        </AppLayout>
+      </>
+    )
+  }
 
   return <Component {...pageProps} />
 }

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import useUser from 'hooks/useUser'
 import Popover from 'components/Popover'
 
-export default function AppLayout ({ pageName }) {
+export default function HeaderLayout ({ pageName }) {
   const user = useUser()
   const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
