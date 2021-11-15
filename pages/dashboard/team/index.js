@@ -1,9 +1,9 @@
 import useUser from 'hooks/useUser'
 import ProfileCard from 'components/ProfileCard'
+import { fetchUrl } from 'utils/fetchUrl'
 
-export async function getServerSideProps (context) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/team`)
-  const data = await response.json()
+export async function getServerSideProps () {
+  const data = await fetchUrl(`${process.env.NEXT_PUBLIC_BASE_URL}/api/team`)
 
   if (!data) {
     return {
