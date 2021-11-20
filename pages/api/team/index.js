@@ -1,3 +1,23 @@
+import { firestore } from 'firebase/admin'
+
+const Team = (req, res) => {
+  return firestore
+    .collection('teamMembers')
+    .get()
+    .then(doc => {
+      const data = (doc.docs.map(item => {
+        return {
+          id: item.id,
+          ...item.data()
+        }
+      }))
+
+      res.status(200).json(data)
+    })
+}
+
+export default Team
+
 const TEAM_MEMBERS = [
   {
     name: 'Christopher Glood',
@@ -43,6 +63,6 @@ const TEAM_MEMBERS = [
   }
 ]
 
-export default function team (req, res) {
-  res.status(200).json(TEAM_MEMBERS)
-}
+// export default function team (req, res) {
+//   res.status(200).json(TEAM_MEMBERS)
+// }

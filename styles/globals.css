@@ -54,3 +54,8 @@ img.image__rounded {
   background: rgb(73,153,205);
   background: linear-gradient(90deg, rgba(73,153,205,1) 6%, rgba(40,107,152,1) 84%);
 }
+
+.shadoww {
+  /* filter: drop-shadow(0 16mm 3mm rgb(160, 0, 210)); */
+  box-shadow: 0px -47px 58px -37px #000000;
+}
