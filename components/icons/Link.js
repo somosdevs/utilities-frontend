@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-function SvgComponent (props) {
+export default function Link (props) {
   return (
     <svg
       width="1em"
@@ -17,5 +17,3 @@ function SvgComponent (props) {
     </svg>
   )
 }
-
-export default SvgComponent
