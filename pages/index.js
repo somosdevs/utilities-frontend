@@ -33,10 +33,10 @@ export default function Home () {
           {user === USER_STATES.NOT_LOGGED && (
             <button
               className={styles.button}
-              backgroundColor="#0d1117"
-              fontSize="2rem"
-              color="#fff"
-              handleClick={handleClick}
+              // backgroundColor="#0d1117"
+              // fontSize="2rem"
+              // color="#fff"
+              onClick={handleClick}
             >
               <Github /> Sign in with Github
             </button>
