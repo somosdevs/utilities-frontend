@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import ExternalLink from 'components/Icons/ExternalLink'
+import { ExternalLink } from 'components/icons'
 
 export default function ProfileCard ({
   name = '',

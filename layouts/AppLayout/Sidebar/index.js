@@ -1,9 +1,6 @@
 import Link from 'next/link'
 import SidebarLink from 'components/SidebarLink'
-import Home from 'components/Icons/Home'
-import People from 'components/Icons/People'
-import Project from 'components/Icons/Project'
-import Code from 'components/Icons/Code'
+import { Home, Project, Code, People } from 'components/icons'
 
 const links = [
   {

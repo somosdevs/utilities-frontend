@@ -1,6 +1,4 @@
-import Document from 'components/Icons/Document'
-import Edit from 'components/Icons/Edit'
-import External from 'components/Icons/ExternalLink'
+import { Document, Edit, ExternalLink } from 'components/icons'
 
 export default function Popover () {
   return (
@@ -22,7 +20,7 @@ export default function Popover () {
             <Document />
             <span className="flex items-center gap-1">
               Docs
-              <External />
+              <ExternalLink />
             </span>
           </a>
         </li>

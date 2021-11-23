@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-target-blank */
-import ExternalLink from 'components/Icons/ExternalLink'
+import { ExternalLink } from 'components/icons'
 
 export default function Anchor ({
   children,
