@@ -46,7 +46,8 @@ export default function Sidebar () {
           top: 0;
           left: 0;
           height: 100vh;
-          width: 16rem;
+          width: 270px;
+          min-width: 220px;
           background-color: var(--primary);
           color: var(--white);
           scrollbar-width: 5px;
