@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export default function SidebarLink ({ icon, title, url }) {
+export default function SidebarItem ({ icon, title, url }) {
   const router = useRouter()
   const { pathname } = router
   return (

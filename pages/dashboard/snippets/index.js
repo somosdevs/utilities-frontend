@@ -1,5 +1,5 @@
 import useUser from 'hooks/useUser'
-import Code from 'components/Snippets/Code'
+import Code from 'components/_dashboard/snippets/Code'
 
 export default function Projects () {
   useUser()

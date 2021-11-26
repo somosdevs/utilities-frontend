@@ -7,7 +7,7 @@ const languages = Joi.array().items(Joi.string()) // .valid() para validar los v
 const link = Joi.string().uri()
 const repoUrl = Joi.string().uri()
 
-export const createProductSchema = Joi.object({
+export const createProjectSchema = Joi.object({
   securityKey: securityKey.required(),
   name: name.required(),
   preview: preview.optional(),

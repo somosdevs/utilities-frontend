@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import NProgress from 'nprogress'
-import AppLayout from 'layouts/AppLayout'
+import AppLayout from 'layouts/dashboard'
 import { capitalize } from 'utils/capitalize'
 
 import '../styles/globals.css'
@@ -14,13 +14,8 @@ function MyApp ({ Component, pageProps }) {
 
   // Progress Bar (NProgress)
   useEffect(() => {
-    const handleStart = (url) => {
-      NProgress.start()
-    }
-
-    const handleStop = () => {
-      NProgress.done()
-    }
+    const handleStart = () => NProgress.start()
+    const handleStop = () => NProgress.done()
 
     router.events.on('routeChangeStart', handleStart)
     router.events.on('routeChangeComplete', handleStop)

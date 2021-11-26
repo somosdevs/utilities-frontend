@@ -1,5 +1,5 @@
 import useUser from 'hooks/useUser'
-import ProfileCard from 'components/ProfileCard'
+import ProfileCard from 'components/_dashboard/team/ProfileCard'
 import { fetchUrl } from 'utils/fetchUrl'
 
 export async function getServerSideProps () {

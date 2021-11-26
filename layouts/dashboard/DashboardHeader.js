@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import useUser from 'hooks/useUser'
-import Popover from 'components/Popover'
+import AccountPopover from './AccountPopover'
 
 export default function HeaderLayout ({ pageName }) {
   const user = useUser()
@@ -23,7 +23,7 @@ export default function HeaderLayout ({ pageName }) {
               height="40px"
             />
           </button>
-          { isPopoverOpen && <Popover /> }
+          { isPopoverOpen && <AccountPopover /> }
         </div>
       </header>
 

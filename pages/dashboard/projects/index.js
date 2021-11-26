@@ -1,6 +1,6 @@
 import useUser from 'hooks/useUser'
 import useFetch from 'hooks/useFetch'
-import ProjectCard from 'components/ProjectCard'
+import ProjectCard from 'components/_dashboard/projects/ProjectCard'
 
 export default function Projects () {
   useUser()

@@ -14,7 +14,7 @@ const links = Joi
       })
   )
 
-export const createProductSchema = Joi.object({
+export const createMemberSchema = Joi.object({
   securityKey: securityKey.required(),
   name: name.required(),
   discord: discord.required(),

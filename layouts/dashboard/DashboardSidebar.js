@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import SidebarLink from 'components/SidebarLink'
+import SidebarItem from './SidebarItem'
 import { Home, Project, Code, People } from 'components/icons'
 
-const links = [
+const LINKS = [
   {
     icon: <Home />,
     title: 'Home',
@@ -25,7 +25,7 @@ const links = [
   }
 ]
 
-export default function Sidebar () {
+export default function DashboardSidebar () {
   return (
     <>
       <nav>
@@ -35,8 +35,8 @@ export default function Sidebar () {
           </a>
         </Link>
         <ul>
-          {links.map((link, index) => (
-            <SidebarLink key={index} icon={link.icon} title={link.title} url={'/dashboard' + link.url} />
+          {LINKS.map((link, index) => (
+            <SidebarItem key={index} icon={link.icon} title={link.title} url={'/dashboard' + link.url} />
           ))}
         </ul>
       </nav>
@@ -46,8 +46,7 @@ export default function Sidebar () {
           top: 0;
           left: 0;
           height: 100vh;
-          width: 270px;
-          min-width: 220px;
+          width: 260px;
           background-color: var(--primary);
           color: var(--white);
           scrollbar-width: 5px;

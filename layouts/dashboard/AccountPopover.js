@@ -1,6 +1,6 @@
 import { Document, Edit, ExternalLink } from 'components/icons'
 
-export default function Popover () {
+export default function AccountPopover () {
   return (
     <div className="absolute z-10 top-[50px] -right-8 h-auto w-28 py-1 text-base text-center bg-white rounded-lg border shadow-md overflow-hidden">
       <ul>
