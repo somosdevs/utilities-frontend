@@ -1,9 +1,9 @@
-import useUser from 'hooks/useUser'
+import useAuth from 'hooks/useAuth'
 import useFetch from 'hooks/useFetch'
 import ProjectCard from 'components/_dashboard/projects/ProjectCard'
 
 export default function Projects () {
-  useUser()
+  useAuth()
   const { data: projects, status } = useFetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects`)
 
   return (

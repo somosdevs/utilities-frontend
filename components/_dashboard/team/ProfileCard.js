@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import useUser from 'hooks/useUser'
+import useAuth from 'hooks/useAuth'
 import CheckIcon from 'components/CheckIcon'
 import { Edit } from 'components/icons'
 
@@ -9,7 +9,7 @@ export default function ProfileCard ({
   avatar = '',
   socialMedia = []
 }) {
-  const user = useUser()
+  const { user } = useAuth()
 
   return (
     <article className="relative bg-custLight-primary h-[320px] w-64 rounded-xl overflow-hidden group">

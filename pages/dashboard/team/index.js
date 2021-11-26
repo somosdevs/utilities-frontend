@@ -1,4 +1,4 @@
-import useUser from 'hooks/useUser'
+import useAuth from 'hooks/useAuth'
 import ProfileCard from 'components/_dashboard/team/ProfileCard'
 import { fetchUrl } from 'utils/fetchUrl'
 
@@ -22,7 +22,7 @@ export async function getServerSideProps () {
 }
 
 export default function Home ({ status, data }) {
-  useUser()
+  useAuth()
 
   return (
     <>

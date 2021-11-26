@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import useUser from 'hooks/useUser'
+import useAuth from 'hooks/useAuth'
 import AccountPopover from './AccountPopover'
 
 export default function HeaderLayout ({ pageName }) {
-  const user = useUser()
+  const { initialized, user } = useAuth()
   const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
   const handleClick = () => setIsPopoverOpen(!isPopoverOpen)
@@ -17,7 +17,7 @@ export default function HeaderLayout ({ pageName }) {
           <button onClick={handleClick}>
             <Image
               className="image__rounded"
-              src={user ? user.avatar : '/vercel.svg'}
+              src={initialized === 'logged' ? user.avatar : '/vercel.svg'}
               alt="Avatar Image"
               width="40px"
               height="40px"

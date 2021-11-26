@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import useUser, { USER_STATES } from 'hooks/useUser'
+import useAuth from 'hooks/useAuth'
 import { Github, Loading } from 'components/icons'
 import styles from 'styles/Home.module.css'
 
 import { logInGithub } from 'firebase/client'
 
 export default function Home () {
-  const user = useUser()
+  const { initialized, user } = useAuth()
   const router = useRouter()
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Home () {
       <main className={styles.main}>
         <div className={styles.container}>
           <h1 className={styles.title}>Utilities X</h1>
-          {user === USER_STATES.NOT_LOGGED && (
+          {initialized === 'not_logged' && (
             <button
               className={styles.button}
               // backgroundColor="#0d1117"
@@ -40,7 +40,7 @@ export default function Home () {
               <Github /> Sign in with Github
             </button>
           )}
-          {user === USER_STATES.NOT_KNOWN && <Loading />}
+          {initialized === 'idle' && <Loading />}
         </div>
       </main>
     </>

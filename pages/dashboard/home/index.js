@@ -1,7 +1,7 @@
-import useUser from 'hooks/useUser'
+import useAuth from 'hooks/useAuth'
 
 export default function Home () {
-  useUser()
+  useAuth()
 
   return (
     <>

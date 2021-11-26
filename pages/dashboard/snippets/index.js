@@ -1,8 +1,8 @@
-import useUser from 'hooks/useUser'
+import useAuth from 'hooks/useAuth'
 import Code from 'components/_dashboard/snippets/Code'
 
 export default function Projects () {
-  useUser()
+  useAuth()
 
   return (
     <>
