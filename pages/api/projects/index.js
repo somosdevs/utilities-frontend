@@ -1,6 +1,6 @@
 import { firestore } from 'firebase/admin'
 import withValidation from 'middlewares/withValidation'
-import { createProductSchema } from 'schemas/projects.schema'
+import { createProjectSchema } from 'schemas/projects.schema'
 
 const Projects = (req, res) => {
   const createdAt = new Date()
@@ -30,4 +30,4 @@ const Projects = (req, res) => {
     })
 }
 
-export default withValidation(Projects, createProductSchema)
+export default withValidation(Projects, createProjectSchema)

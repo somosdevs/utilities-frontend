@@ -21,7 +21,8 @@ export default function ProfileCard ({
       </button>
       <div className="relative h-48 w-full">
         {
-          avatar
+          // eslint-disable-next-line no-extra-boolean-cast
+          !!avatar
             ? <Image
               src={avatar}
               alt={name}
