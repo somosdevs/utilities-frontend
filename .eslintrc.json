@@ -24,6 +24,8 @@
         "react/react-in-jsx-scope": 0,
         "react/function-component-definition": 0,
         "react/jsx-props-no-spreading": 0,
-        "import/no-extraneous-dependencies": 0
+        "import/no-extraneous-dependencies": 0,
+        "no-use-before-define": 0,
+        "jsx-a11y/anchor-is-valid": 0
     }
 }
