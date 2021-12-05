@@ -1,37 +1,28 @@
+import PublicPage from '@layouts/PublicPage';
 import type { NextPage } from 'next';
-import Link from 'next/link';
-import Head from 'next/head';
 import tw from 'tailwind-styled-components';
 
 const Home: NextPage = () => (
-  <Main>
-    <Head>
-      <title>Utilities ~ X ~</title>
-      <meta name="title" content="Utilities X" />
-      <meta name="description" content="Our own web 👀" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-
-    <Link href="/login">
+  <PublicPage title="home">
+    <Main>
       <Title>¡Hola!</Title>
-    </Link>
-  </Main>
+    </Main>
+  </PublicPage>
 );
 
 const Main = tw.div`
   flex
   items-center
   justify-center
-  h-screen
-  w-screen
+  h-100
+  w-100
 `;
 
-const Title = tw.a`
+const Title = tw.h1`
+  mt-44
   font-bold
   text-4xl
-  cursor-pointer
-
-  hover:opacity-60
+  text-black
 `;
 
 export default Home;
