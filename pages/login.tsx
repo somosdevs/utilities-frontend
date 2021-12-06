@@ -1,30 +1,59 @@
+import { useState } from 'react';
 import type { NextPage } from 'next';
-import PublicPage from '@layouts/PublicPage';
+import { useRouter } from 'next/router';
 import tw from 'tailwind-styled-components';
-import { LoginAuthButton } from 'components/_auth';
-import { Github } from 'components/Icon';
-import { Provider } from 'types/login/provider';
 
-const SignInProviders = [
-  {
-    handleClick: () => true,
-    icon: <Github />,
-    provider: 'Github',
-    bgColor: '#111',
-    textColor: '#fff',
-  },
-] as Provider[];
+// hooks
+import { useUser } from 'hooks/useUser';
 
-const Login: NextPage = () => (
-  <PublicPage title="Sign In">
-    <Container>
-      <Title>Log in</Title>
-      {
-        SignInProviders.map((props: Provider) => <LoginAuthButton {...props} pending={false} />)
-      }
-    </Container>
-  </PublicPage>
-);
+// types
+import { Provider } from '@customTypes/login';
+
+// icons
+import { Github } from '@components/Icon';
+
+// layout
+import PublicPage from '@layouts/PublicPage';
+
+// components
+import { LoginAuthButton } from '@components/_auth';
+
+// firebase
+import { signInGithub } from '../firebase/client';
+
+const Login: NextPage = () => {
+  const { status } = useUser();
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  const SignInProviders = [
+    {
+      handleClick: () => {
+        setIsLoading(true);
+        signInGithub().then(() => setIsLoading(false)).catch(console.error);
+      },
+      icon: <Github />,
+      provider: 'Github',
+      bgColor: '#111',
+      textColor: '#fff',
+    },
+  ] as Provider[];
+
+  (() => status === 'logged' && router.replace('/dashboard'))();
+
+  return (
+    <PublicPage title="Sign In">
+      <Container>
+        <Title>Log in</Title>
+        {
+          SignInProviders.map((props: Provider) => (
+            <LoginAuthButton key={props.provider} {...props} pending={isLoading || status === 'not_known'} />
+          ))
+        }
+      </Container>
+    </PublicPage>
+  );
+};
 
 const Container = tw.div`
   flex
@@ -39,7 +68,7 @@ const Container = tw.div`
 const Title = tw.h1`
   text-5xl
   font-bold
-  mb-10
+  mb-8
 `;
 
 export default Login;

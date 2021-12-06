@@ -1,6 +1,6 @@
 import tw from 'tailwind-styled-components';
 import { ElasticSpinner } from 'components/Icon';
-import { Provider } from 'types/login/provider';
+import { Provider } from '@customTypes/login';
 
 export default function LoginAuthButton({
   handleClick,
@@ -13,9 +13,10 @@ export default function LoginAuthButton({
   return (
     <Button
       type="button"
-      onClick={(handleClick)}
+      onClick={handleClick}
       style={{ backgroundColor: bgColor, color: textColor }}
       $pending={pending}
+      disabled={pending}
     >
       {
         pending

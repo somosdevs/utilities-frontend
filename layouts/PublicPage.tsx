@@ -1,7 +1,10 @@
-import { ReactChild } from 'react';
+import { ReactChild, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import tw from 'tailwind-styled-components';
+import { useUser } from 'hooks/useUser';
+import { Popover } from '@components/navbar';
 
 type PublicPageProps = {
   title: string;
@@ -9,6 +12,9 @@ type PublicPageProps = {
 }
 
 export default function PublicPage({ title, children }: PublicPageProps) {
+  const { status, user } = useUser();
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <>
       <Head>
@@ -19,16 +25,35 @@ export default function PublicPage({ title, children }: PublicPageProps) {
       </Head>
       <Layout>
         <Navbar>
-          <div />
           <Link href="/">
-            <a className="text-xl sm:text-3xl font-bold cursor-pointer">UtilitiesX</a>
+            <a className="text-xl sm:text-2xl font-bold cursor-pointer">UtilitiesX</a>
           </Link>
-          <Link href="/login">
-            <a className="border-2 border-secondary-200 rounded-md sm:px-6 sm:py-1.5 hover:bg-secondary-50 hover:bg-opacity-25">
-              <span className="sm:hidden px-2">+</span>
-              <span className="hidden sm:inline">Sign in</span>
-            </a>
-          </Link>
+          {
+            status === 'logged'
+              ? (
+                <div className="relative">
+                  <Button onClick={() => setIsActive(!isActive)}>
+                    <Image
+                      src={user ? user.avatar : '/vercel.svg'}
+                      alt="Avatar Image"
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </Button>
+                  <Popover isActive={isActive} />
+                </div>
+              )
+              : (
+                <Link href="/login">
+                  <a className="border-2 border-secondary-200 rounded-md sm:px-6 sm:py-1.5 hover:bg-secondary-50 hover:bg-opacity-25">
+                    <span className="sm:hidden px-2">+</span>
+                    <span className="hidden sm:inline">
+                      Sign in
+                    </span>
+                  </a>
+                </Link>
+              )
+          }
         </Navbar>
         <Main>
           {children}
@@ -66,4 +91,13 @@ const Navbar = tw.nav`
   rounded-xl
   bg-primary
   text-secondary-200
+`;
+
+const Button = tw.button`
+  relative
+  h-10
+  w-10
+  rounded-full
+  overflow-hidden
+  cursor-pointer
 `;
